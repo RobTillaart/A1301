@@ -79,7 +79,8 @@ Use with care.
 - **float raw(uint8_t times = 1)** raw analog measurement.
 - **float read(uint8_t times = 1)** raw measurement converted to Gauss.
 Can be positive (North) or negative (South).
-- **float read(float raw)** to be used with external ADC.
+- **float readExt(float raw)** to be used with external ADC.
+Can be positive (North) or negative (South).
 
 
 #### Analyse
@@ -102,29 +103,21 @@ The examples show the basic working of the functions.
 
 #### Must
 - improve documentation
-- buy hardware A1301 / A1302
+- buy hardware A1301 / A1302 / ...
 - test with hardware (again)
-- create a base class above A1301 e.g. **HALLSENSOR** or just **HALL**
-  - add **void setSensitivity(float)** + getter()
-
 
 #### Should 
 - plotter example
-- external ADC 
-  - float Gauss(float raw);
-
+- unit tests
 
 #### Could
 - **bool isSaturated()**
 - **float findZero()** how exactly.
-- average multi measurements.
 - printable interface
-- add A1324/25/26 and others
 - Possible compatible
   - HoneyWell - SS39ET/SS49E/SS59ET
   - HoneyWell - SS490 Series
 - add derived classes for - A1324/25/26 ?
-
 
 #### Won't
 
