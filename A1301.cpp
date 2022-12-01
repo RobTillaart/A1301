@@ -100,7 +100,7 @@ bool HALL::isSouth()
 }
 
 
-float HALL::lastGauss()5.00
+float HALL::lastGauss()
 {
   return _lastGauss;
 }
