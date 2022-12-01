@@ -21,13 +21,17 @@ field. These devices have a quiescent output voltage that is
 provided: 2.5 mV/G typical for the A1301, and 1.3 mV/G
 typical for the A1302. (from datasheet)
 
-|  sensor  |  sensitivity  |
-|:---------|:-------------:|
-|  A1301   |  2.5 mV/Gauss |
-|  A1302   |  1.3 mV/Gauss |
 
-Other compatible sensors are not known.
-Please let me know if you know them (please send link to datasheets).
+|  sensor  |  sensitivity    |  support  |
+|:---------|:---------------:|:---------:|
+|  A1301   |  2.5   mV/Gauss |     Y     |
+|  A1302   |  1.3   mV/Gauss |     Y     |
+|  A1324   |  5.000 mV/Gauss |     N     |
+|  A1325   |  3.125 mV/Gauss |     N     |
+|  A1326   |  2.500 mV/Gauss |     N     |
+
+Other, more or less, compatible sensors are welcome.
+(see future)
 
 The library is experimental and need more testing.
 Feedback, issues and improvements are welcome, 
@@ -48,10 +52,15 @@ Please open an issue on GitHub.
 
 ## Interface
 
-#### Base
+#### Constructor
 
+- **HALL(uint8_t pin)** base class constructor.
+pin is the analogPin to read from.
 - **A1301(uint8_t pin)** constructor.
-  - pin is the analogPin to read from.
+- **A1302(uint8_t pin)** constructor.
+
+#### Configuration
+
 - **void begin(float voltage, uint16_t steps)**
 Sets the parameters voltage and number of steps of the internal ADC.
 Note this allows to update the voltage runtime.
@@ -60,19 +69,29 @@ It is the value where there is no (zero) magnetic field.
 Note it does not need to be a whole value. 
 This allows quite precise tuning.
 - **float getMidPoint()** returns the current midPoint.
+- **void setSensitivity(float sensitivity)** overrule default sensitivity.
+Use with care.
+- **float getSensitivity()** return current sensitivity.
+
 
 #### Read
 
 - **float raw(uint8_t times = 1)** raw analog measurement.
-- **float Gauss(uint8_t times = 1)** raw measurement converted to Gauss.
+- **float read(uint8_t times = 1)** raw measurement converted to Gauss.
 Can be positive (North) or negative (South).
-- **float delta(uint8_t times = 1)** returns the delta in Gauss compared to the last measurement.
+- **float read(float raw)** to be used with external ADC.
+
 
 #### Analyse
 
 - **bool isNorth()** idem.
 - **bool isSouth()** idem.
-- **float lastGauss()** returns last measurement.
+- **float lastGauss()** returns last measurement in Gauss.
+- **float prevGauss()** returns previous measurement in Gauss.
+- **float Tesla(float Gauss)** convenience convertor.
+- **float mTesla(float Gauss)** convenience convertor.
+- **float uTesla(float Gauss)** convenience convertor.
+
 
 ## Operation
 
@@ -85,19 +104,27 @@ The examples show the basic working of the functions.
 - improve documentation
 - buy hardware A1301 / A1302
 - test with hardware (again)
+- create a base class above A1301 e.g. **HALLSENSOR** or just **HALL**
+  - add **void setSensitivity(float)** + getter()
+
 
 #### Should 
 - plotter example
 - external ADC 
   - float Gauss(float raw);
 
+
 #### Could
 - **bool isSaturated()**
 - **float findZero()** how exactly.
 - average multi measurements.
 - printable interface
-- external ADC 
-  - float Gauss(float raw);
+- add A1324/25/26 and others
+- Possible compatible
+  - HoneyWell - SS39ET/SS49E/SS59ET
+  - HoneyWell - SS490 Series
+- add derived classes for - A1324/25/26 ?
+
 
 #### Won't
 

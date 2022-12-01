@@ -31,11 +31,13 @@ void loop()
     lastTime = millis();
     Serial.print(mm.raw());
     Serial.print("\t");
-    Serial.print(mm.Gauss());
+    Serial.print(mm.read());
     Serial.print("\t");
     Serial.print(mm.isNorth());
     Serial.print("\t");
     Serial.print(mm.isSouth());
+    Serial.print("\t");
+    Serial.print(mm.prevGauss());
     Serial.print("\t");
     Serial.print(mm.lastGauss());
     Serial.print("\n");

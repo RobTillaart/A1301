@@ -9,7 +9,7 @@
 #include "A1301.h"
 
 
-A1301::A1301(uint8_t pin)
+HALL::HALL(uint8_t pin)
 {
   _pin       = pin;
   _midPoint  = 512;
@@ -19,21 +19,33 @@ A1301::A1301(uint8_t pin)
 }
 
 
-void A1301::begin(float voltage, uint16_t steps)
+void HALL::begin(float voltage, uint16_t steps)
 {
   _mVStep = voltage / steps;
 }
 
 
-void A1301::setMidPoint(float midPoint)
+void HALL::setMidPoint(float midPoint)
 {
   _midPoint = midPoint;
 }
 
 
-float A1301::getMidPoint()
+float HALL::getMidPoint()
 {
   return _midPoint;
+}
+
+
+void HALL::setSensitivity(float sensitivity)
+{
+  _mVGauss = sensitivity;
+}
+
+
+float HALL::getSensitivity()
+{
+  return _mVGauss;
 }
 
 
@@ -41,7 +53,7 @@ float A1301::getMidPoint()
 //
 //  READ
 //
-float A1301::raw(uint8_t times)
+float HALL::raw(uint8_t times)
 {
   float sum = 0;
   if (times == 0) times = 1;
@@ -54,40 +66,68 @@ float A1301::raw(uint8_t times)
 }
 
 
-float A1301::Gauss(uint8_t times)
+float HALL::read(uint8_t times)
 {
   float milliVolts = (raw(times) - _midPoint) * _mVStep;
+  _prevGauss = _lastGauss;
   _lastGauss = milliVolts / _mVGauss;
   return _lastGauss;
 }
 
-float A1301::delta(uint8_t times)
-{
-  float lg = _lastGauss;
-  return Gauss(times) - lg;
-}
 
+float HALL::read(float raw)
+{
+  float milliVolts = (raw - _midPoint) * _mVStep;
+  _prevGauss = _lastGauss;
+  _lastGauss = milliVolts / _mVGauss;
+  return _lastGauss;
+}
 
 
 /////////////////////////////////////////////////////////////////////////////
 //
 //  ANALYSE
 //
-bool A1301::isNorth()
+bool HALL::isNorth()
 {
   return (_lastGauss > 0);
 }
 
 
-bool A1301::isSouth()
+bool HALL::isSouth()
 {
   return (_lastGauss < 0);
 }
 
 
-float A1301::lastGauss()
+float HALL::lastGauss()5.00
 {
   return _lastGauss;
+}
+
+
+float HALL::prevGauss()
+{
+  return _prevGauss;
+}
+
+
+//  CONVERTORs
+float HALL::Tesla(float Gauss)
+{
+  return Gauss * 0.0001;
+}
+
+
+float HALL::mTesla(float Gauss)
+{
+  return Gauss * 0.1;
+}
+
+
+float HALL::uTesla(float Gauss)
+{
+  return Gauss * 100;
 }
 
 
@@ -95,9 +135,15 @@ float A1301::lastGauss()
 //
 //  DERIVED
 //
-A1302::A1302(uint8_t pin) : A1301(pin)
+A1301::A1301(uint8_t pin) : HALL(pin)
 {
   _mVGauss   = 2.5;
+}
+
+
+A1302::A1302(uint8_t pin) : HALL(pin)
+{
+  _mVGauss   = 1.3;
 }
 
 

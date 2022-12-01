@@ -45,7 +45,70 @@ unittest(test_constants)
 
 unittest(test_constructor)
 {
-  assertEqualFloat(1, 1, 0.001);
+  HALL  H(4);
+  A1301 A(5);
+  A1302 B(6);
+
+  H.begin(3.3, 4095);
+  A.begin(5.0, 1023);
+  B.begin(5.0, 1023);
+
+  assertEqualFloat(2.500, H.getSensitivity(), 0.001);
+  assertEqualFloat(2.500, A.getSensitivity(), 0.001);
+  assertEqualFloat(1.300, B.getSensitivity(), 0.001);
+}
+
+
+unittest(test_midPoint)
+{
+  HALL  H(4);
+
+  H.begin(3.3, 4095);
+  H.setMidPoint(2020);
+  assert(2020, H.getMidPoint());
+}
+
+
+unittest(test_sensitivity)
+{
+  HALL  H(4);
+
+  H.begin(3.3, 4095);
+
+  assertEqualFloat(2.500, H.getSensitivity(), 0.001);
+  H.setSensitivity(2.480);
+  assertEqualFloat(2.480, H.getSensitivity(), 0.001);
+}
+
+
+unittest(test_read_external_ADC)
+{
+  HALL  H(4);
+
+  H.begin(3.3, 4095);
+  H.setMidPoint(2047);
+
+  assertEqualFloat(0, H.read(1000), 0.01);
+  assertTrue(H.isSouth());
+  assertEqualFloat(0, H.read(1500), 0.01);
+  assertTrue(H.isSouth());
+  assertEqualFloat(0, H.read(2000), 0.01);
+  assertTrue(H.isSouth());
+  assertEqualFloat(0, H.read(3000), 0.01);
+  assertTrue(H.isSouth());
+}
+
+
+unittest(test_converters)
+{
+  HALL  H(4);
+
+  H.begin(3.3, 4095);
+  H.setMidPoint(2047);
+
+  assertEqualFloat(0.005, H.Tesla(50), 0.01);
+  assertEqualFloat(5.00, H.mTesla(50), 0.01);
+  assertEqualFloat(5000, H.uTesla(50), 0.01);
 }
 
 
