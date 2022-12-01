@@ -75,7 +75,7 @@ float HALL::read(uint8_t times)
 }
 
 
-float HALL::read(float raw)
+float HALL::readExt(float raw)
 {
   float milliVolts = (raw - _midPoint) * _mVStep;
   _prevGauss = _lastGauss;

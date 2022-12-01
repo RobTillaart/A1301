@@ -41,7 +41,7 @@ public:
   float     raw(uint8_t times = 1);   // return Gauss
   float     read(uint8_t times = 1);  // return Gauss
   //  for external ADC
-  float     read(float raw);
+  float     readExt(float raw);
 
   //  ANALYSE
   bool      isNorth();

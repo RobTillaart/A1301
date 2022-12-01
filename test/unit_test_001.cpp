@@ -88,13 +88,13 @@ unittest(test_read_external_ADC)
   H.begin(3.3, 4095);
   H.setMidPoint(2047);
 
-  assertEqualFloat(0, H.read(1000.0), 0.01);
+  assertEqualFloat(0, H.readExt(1000.0), 0.01);
   assertTrue(H.isSouth());
-  assertEqualFloat(0, H.read(1500.0), 0.01);
+  assertEqualFloat(0, H.readExt(1500.0), 0.01);
   assertTrue(H.isSouth());
-  assertEqualFloat(0, H.read(2000.0), 0.01);
+  assertEqualFloat(0, H.readExt(2000.0), 0.01);
   assertTrue(H.isSouth());
-  assertEqualFloat(0, H.read(3000.0), 0.01);
+  assertEqualFloat(0, H.readExt(3000.0), 0.01);
   assertTrue(H.isSouth());
 }
 
