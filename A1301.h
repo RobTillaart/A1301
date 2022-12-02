@@ -57,7 +57,7 @@ public:
   //  manual override default maxGauss
   void      setMaxGauss(uint16_t maxGauss);
   float     getMaxGauss();
-  bool      isSaturated()
+  bool      isSaturated();
 
 
 protected:
