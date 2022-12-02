@@ -88,13 +88,13 @@ float HALL::readExt(float raw)
 //
 //  ANALYSE
 //
-bool HALL::isNorth()
+boolean HALL::isNorth()
 {
   return (_lastGauss > 0);
 }
 
 
-bool HALL::isSouth()
+boolean HALL::isSouth()
 {
   return (_lastGauss < 0);
 }

@@ -44,8 +44,8 @@ public:
   float     readExt(float raw);
 
   //  ANALYSE
-  bool      isNorth();
-  bool      isSouth();
+  boolean   isNorth();
+  boolean   isSouth();
   float     lastGauss();
   float     prevGauss();
   //  CONVERTERs
