@@ -85,8 +85,8 @@ Can be positive (North) or negative (South).
 
 #### Analyse
 
-- **bool isNorth()** idem.
-- **bool isSouth()** idem.
+- **boolean isNorth()** idem.
+- **boolean isSouth()** idem.
 - **float lastGauss()** returns last measurement in Gauss.
 - **float prevGauss()** returns previous measurement in Gauss.
 - **float Tesla(float Gauss)** convenience convertor.
@@ -111,7 +111,7 @@ The examples show the basic working of the functions.
 - unit tests
 
 #### Could
-- **bool isSaturated()**
+- **boolean isSaturated()**
 - **float findZero()** how exactly.
 - printable interface
 - Possible compatible
