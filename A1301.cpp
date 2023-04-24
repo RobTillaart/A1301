@@ -17,12 +17,12 @@
 HALL::HALL(uint8_t pin)
 {
   _pin         = pin;
-  _midPoint    = 1023 * 0.5;     //  default middle
+  _maxADC      = 1023;
+  _mVStep      = 5000.0 / _maxADC;  //  default 10 bit 5V ADC (UNO)
+  _midPoint    = _maxADC * 0.5;     //  default middle
   _prevGauss   = 0;
   _lastGauss   = 0;
   _mVGauss     = 2.5;
-  _mVStep      = 5000.0 / 1023;  //  default 10 bit 5V ADC (UNO)
-  _maxADC      = 1023;
   _maxGauss    = 500.0;
 }
 

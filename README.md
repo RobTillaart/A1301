@@ -13,7 +13,7 @@ Arduino library for A1301 and A1302 magnetometer.
 
 ## Description
 
-The A1301 and A1302 are continuous-time, radiometric, linear Hall-effect sensors. 
+The A1301 and A1302 are continuous-time, Ratio-metric, linear Hall-effect sensors. 
 They are optimized to accurately provide a voltage output that is proportional to 
 an applied magnetic field. 
 These devices have a quiescent output voltage that is 50% of the supply voltage. 
@@ -153,11 +153,14 @@ The examples show the basic working of the functions.
 #### Could
 
 - **float findZero()** how exactly => ACS712 **autoMidPoint()**
-  - **float determineNoise()** related
+- investigate **float determineNoise()** (set/get)
 - add examples.
+  - performance read()
 - Possible compatible
   - HoneyWell - SS39ET/SS49E/SS59ET
   - HoneyWell - SS490 Series
+- temperature correction functions?
+  - see datasheet.
 
 
 #### Ideas
@@ -171,11 +174,10 @@ The examples show the basic working of the functions.
 - atan2(prevGauss, lastGauss)?
   - angle indicates relative delta compared to magnitude and direction.
   - 45 135 degrees is no change. 
-- can the signal be converted to distance?
+- can the strength of the signal be converted to distance?
   - for a given magnet
   - repeatability + noise.
 - influence of angle of the field-lines?
-- investigate set- get- determineNoiseLevel()?
 - defaults for parameters of some functions?
 
 
