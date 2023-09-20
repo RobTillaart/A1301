@@ -7,7 +7,7 @@
 #include "Arduino.h"
 #include "A1301.h"
 
-A1301 mm(A1);
+A1301 mm(A0);
 
 uint32_t lastTime = 0;
 
