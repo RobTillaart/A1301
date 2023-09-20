@@ -191,6 +191,7 @@ The examples show the basic working of the functions.
 
 - printable interface
   - does not add much.
+
 - can the strength of the signal be converted to distance?
   - for a given magnet maybe
   - repeatability + noise is a problem.

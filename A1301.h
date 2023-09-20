@@ -62,6 +62,7 @@ public:
   float     determineNoise(uint8_t times = 2);  //  in Gauss
 
 
+
   //  CONVERTERs
   float     Tesla(float Gauss);
   float     mTesla(float Gauss);
