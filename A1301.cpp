@@ -48,6 +48,7 @@ void HALL::setMidPoint(float midPoint)
 float HALL::autoMidPoint(uint8_t times)
 {
   _midPoint = raw(times);
+  return _midPoint;
 }
 
 
