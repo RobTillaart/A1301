@@ -84,7 +84,10 @@ Steps must be larger than zero.
 It is the value where there is no (zero) magnetic field.
 Note it does not need to be a whole value. 
 This allows quite precise tuning.
-- **float getMidPoint()** returns the current midPoint.
+- **float autoMidPoint(uint8_t times = 100)** assumes zero field. 
+Averages multiple (default 100) samples to set the midPoint.
+Also returns the found midPoint.
+-- **float getMidPoint()** returns the current midPoint.
 - **void setSensitivity(float sensitivity)** overrule default sensitivity.
 Use with care.
 - **float getSensitivity()** return the set / current sensitivity.
@@ -169,14 +172,15 @@ The examples show the basic working of the functions.
 
 #### Could
 
-- **float findZero()** how exactly => ACS712 **autoMidPoint()**
-- add examples.
-  - performance read()
 - Possible compatible
   - HoneyWell - SS39ET/SS49E/SS59ET
   - HoneyWell - SS490 Series
 - temperature correction functions?
   - see datasheet.
+- relative flux = prevGauss / lastGauss 
+  - smaller 1 => increasing
+  - larger  1 => decreasing
+  - negative  => flipping
 
 
 #### Ideas
