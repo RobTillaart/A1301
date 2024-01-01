@@ -86,6 +86,7 @@ Note it does not need to be a whole value.
 This allows quite precise tuning.
 - **float autoMidPoint(uint8_t times = 100)** assumes zero field. 
 Averages multiple (default 100) samples to set the midPoint.
+Uses internal ADC.
 Also returns the found midPoint.
 -- **float getMidPoint()** returns the current midPoint.
 - **void setSensitivity(float sensitivity)** overrule default sensitivity.
@@ -143,12 +144,6 @@ If maxGauss < 0 the absolute value is set.
 - **float Tesla(float Gauss)** convenience convertor.
 - **float mTesla(float Gauss)** convenience convertor.
 - **float uTesla(float Gauss)** convenience convertor.
-
-
-## Operation
-
-The examples show the basic working of the functions.
-(to elaborate more examples)
 
 
 ## Future
