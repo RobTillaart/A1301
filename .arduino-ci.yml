@@ -1,6 +1,6 @@
 platforms:
   rpipico:
-    board: rpipico
+    board: rp2040:rp2040:rpipico
     package: rp2040:rp2040               #  name:architecture:board
     gcc:
       features:
@@ -38,5 +38,5 @@ compile:
     #- esp8266
     # - mega2560
     - rpipico
-    # - TEENSY41
+    - teensy41
 
