@@ -8,9 +8,10 @@ platforms:
         - ARDUINO_ARCH_RP2040
       warnings:
       flags:
+
   teensy41:
-    board: teensy:teensy4:teensy41
-    package: teensy:teensy4
+    board: teensy:Teensyduino:teensy41
+    package: teensy:Teensyduino
     gcc:
       features:
       defines:
@@ -21,7 +22,7 @@ platforms:
 packages:
   rp2040:rp2040:
     url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
-  teensy:teensy4:
+  teensy:Teensyduino:
     url: https://www.pjrc.com/teensy/package_teensy_index.json
 
 
