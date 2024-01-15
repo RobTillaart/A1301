@@ -1,6 +1,6 @@
 platforms:
   rpipico:
-    board: rp2040:rp2040:rpipico
+    board: rpipico
     package: rp2040:rp2040               #  name:architecture:board
     gcc:
       features:
@@ -9,8 +9,8 @@ platforms:
       warnings:
       flags:
 
-  TEENSY41:
-    board: teensy:teensy:TEENSY41
+  teensy41:
+    board: teensy:teensy:teensy41
     package: teensy:teensy
     gcc:
       features:
@@ -37,6 +37,6 @@ compile:
     #- esp32
     #- esp8266
     # - mega2560
-    # - rpipico
-    - TEENSY41
+    - rpipico
+    # - TEENSY41
 
