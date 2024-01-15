@@ -9,8 +9,8 @@ platforms:
       warnings:
       flags:
   teensy41:
-    board: teensy:avr:teensy41
-    package: teensy:acr
+    board: teensy:teensy4:teensy41
+    package: teensy:teensy4
     gcc:
       features:
       defines:
@@ -21,7 +21,7 @@ platforms:
 packages:
   rp2040:rp2040:
     url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
-  teensy:avr:
+  teensy:teensy4:
     url: https://www.pjrc.com/teensy/package_teensy_index.json
 
 
@@ -36,6 +36,6 @@ compile:
     #- esp32
     #- esp8266
     # - mega2560
-    - rpipico
-    #- teensy41
+    # - rpipico
+    - teensy41
 
