@@ -9,13 +9,13 @@ platforms:
       warnings:
       flags:
 
-  teensyMM:
-    board: teensy:teensy:teensyMM
+  TEENSY41:
+    board: teensy:teensy:TEENSY41
     package: teensy:teensy
     gcc:
       features:
       defines:
-        - ARDUINO_TEENSYMM
+        - ARDUINO_TEENSY41
       warnings:
       flags:
 
