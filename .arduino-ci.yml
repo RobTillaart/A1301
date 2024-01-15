@@ -9,20 +9,20 @@ platforms:
       warnings:
       flags:
 
-  teensy41:
-    board: teensy:Teensyduino:teensy41
-    package: teensy:Teensyduino
+  teensyMM:
+    board: teensy:teensy:teensyMM
+    package: teensy:teensy
     gcc:
       features:
       defines:
-        - ARDUINO_TEENSY41
+        - ARDUINO_TEENSYMM
       warnings:
       flags:
 
 packages:
   rp2040:rp2040:
     url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
-  teensy:Teensyduino:
+  teensy:teensy:
     url: https://www.pjrc.com/teensy/package_teensy_index.json
 
 
