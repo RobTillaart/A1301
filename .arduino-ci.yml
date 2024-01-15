@@ -1,7 +1,7 @@
 platforms:
   rpipico:
-    board: rp2040:xxx:rpipico
-    package: rp2040:xxx               #  name:architecture:board
+    board: rp2040:rp2040:rpipico
+    package: rp2040:rp2040               #  name:architecture:board
     gcc:
       features:
       defines:
@@ -19,7 +19,7 @@ platforms:
       flags:
 
 packages:
-  rp2040:xxx:
+  rp2040:rp2040:
     url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
   teensy:avr:
     url: https://www.pjrc.com/teensy/package_teensy_index.json
