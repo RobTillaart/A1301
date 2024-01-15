@@ -9,8 +9,8 @@ platforms:
       warnings:
       flags:
   teensy41:
-    board: teensy:teensy:teensy41
-    package: teensy:teensy
+    board: teensy:avr:teensy41
+    package: teensy:avr
     gcc:
       features:
       defines:
@@ -21,7 +21,7 @@ platforms:
 packages:
   rp2040:rp2040:
     url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
-  teensy:teensy:
+  teensy:avr:
     url: https://www.pjrc.com/teensy/package_teensy_index.json
 
 
