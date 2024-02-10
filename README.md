@@ -9,7 +9,7 @@
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/A1301.svg)](https://registry.platformio.org/libraries/robtillaart/A1301)
 
 [![Commits since latest](https://img.shields.io/github/commits-since/RobTillaart/A1301/latest)](https://github.com/RobTillaart/A1301/commits/master)
-![Hit Counter](https://visitor-badge.laobi.icu/badge?page_id=RobTillaart_Arduino)
+
 
 # A1301
 
