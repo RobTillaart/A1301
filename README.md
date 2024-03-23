@@ -1,4 +1,5 @@
 
+[![PlatformIO CI](https://github.com/RobTillaart/A1301/workflows/PlatformIO%20CI/badge.svg)](https://docs.platformio.org/en/latest/integration/ci/github-actions.html)
 [![Arduino CI](https://github.com/RobTillaart/A1301/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/RobTillaart/A1301/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/A1301/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/A1301/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/A1301/actions/workflows/jsoncheck.yml)
