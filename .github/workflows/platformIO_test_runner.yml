@@ -28,7 +28,7 @@ jobs:
         run: pip install --upgrade platformio
         
       - name: Download library
-          run: |
+        run: |
           wget https://github.com/RobTillaart/A1301/archive/master.zip -O /tmp/master.zip
           unzip /tmp/master.zip -d /tmp
       - name: Build PlatformIO examples
