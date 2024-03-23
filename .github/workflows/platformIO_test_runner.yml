@@ -26,8 +26,12 @@ jobs:
           python-version: '3.11'
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
-  
+        
+      - name: Download library
+          run: |
+          wget https://github.com/RobTillaart/A1301/archive/master.zip -O /tmp/master.zip
+          unzip /tmp/master.zip -d /tmp
       - name: Build PlatformIO examples
-        run: pio ci --board=uno
+        run: pio ci --lib "." --lib="/tmp/A1301" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
