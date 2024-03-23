@@ -11,7 +11,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        example: [/tmp/A1301-master/examples/A1301_demo/A1301_demo.ino]
+        #  example: [/tmp/A1301-master/examples/A1301_demo/A1301_demo.ino]
+        example: [/tmp/A1301-master/examples/*]
   
     steps:
       - uses: actions/checkout@v4
