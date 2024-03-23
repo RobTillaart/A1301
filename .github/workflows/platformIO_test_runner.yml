@@ -5,12 +5,13 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     #  added timeout
     timeout-minutes: 20
     strategy:
       matrix:
-        example: [examples/A1301_demo.ino]
+        os: [ubuntu-latest]
+        example: [examples/A1301_demo/A1301_demo.ino]
   
     steps:
       - uses: actions/checkout@v4
