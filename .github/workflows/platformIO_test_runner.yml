@@ -11,10 +11,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        example: [A1301_demo/A1301_demo.ino, 
-                  examples/A1301_autoMidPoint/A1301_autoMidPoint.ino]
-        #  example: [/tmp/A1301-master/examples/*/*]
-  
+        example: [
+                   examples/A1301_autoMidPoint/A1301_autoMidPoint.ino,
+                   examples/A1301_demo/A1301_demo.ino,
+                   examples/A1301_determineNoise/A1301_determineNoise.ino,
+                   examples/A1301_performance/A1301_performance.ino,
+                   examples/A1301_plotter/A1301_plotter.ino,
+                   examples/A1301_test/A1301_test.ino,
+                   examples/A1301_test_saturation/A1301_test_saturation.ino
+                  ]
+ 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
