@@ -32,8 +32,8 @@ jobs:
         run: |
           wget https://github.com/RobTillaart/A1301/archive/master.zip -O /tmp/master.zip
           unzip /tmp/master.zip -d /tmp
-          ls -al /tmp
       - name: Build PlatformIO examples
         run: pio ci --lib "." --lib="/tmp/A1301-master" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
+          PLATFORMIO_BUILD_FLAGS: -D -Werror
