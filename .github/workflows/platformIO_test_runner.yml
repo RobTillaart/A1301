@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        example: [examples/A1301_demo/A1301_demo.ino]
+        example: [/tmp/A1301-master/examples/A1301_demo/A1301_demo.ino]
   
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +32,6 @@ jobs:
           unzip /tmp/master.zip -d /tmp
           ls -al /tmp
       - name: Build PlatformIO examples
-        run: pio ci --lib "." --lib="/tmp/A1301" --board=uno
+        run: pio ci --lib "." --lib="/tmp/A1301-master" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
