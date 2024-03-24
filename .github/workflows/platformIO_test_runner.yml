@@ -36,7 +36,7 @@ jobs:
         run: pip install --upgrade platformio
       - name: Download library
         run: |
-          wget https://github.com/$github.repository/archive/master.zip -O /tmp/master.zip
+          wget https://github.com/${{github.repository}}/archive/master.zip -O /tmp/master.zip
           unzip /tmp/master.zip -d /tmp
       - name: Build PlatformIO examples
         run: pio ci --lib "." --lib="/tmp/A1301-master" --board=uno
