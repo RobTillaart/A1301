@@ -36,7 +36,7 @@ jobs:
         run: pip install --upgrade platformio
       - name: Download library
         run: |
-          wget https://github.com/${{github.repository}}/archive/${{github.ref}}.zip -O /tmp/master.zip
+          wget https://github.com/${{github.repository}}/archive/${{github.branch}}.zip -O /tmp/master.zip
           unzip /tmp/master.zip -d /tmp
           echo ${{github.base_ref}}
       - name: Build PlatformIO examples
