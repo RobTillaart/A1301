@@ -49,6 +49,8 @@ jobs:
           ls -al
           ls -al ..
           ls -al ../..
+          ls -al ../../_actions
+          ls -al ../../_temp
 
 
 
