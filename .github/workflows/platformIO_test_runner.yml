@@ -38,9 +38,15 @@ jobs:
         run: |
           wget https://github.com/${{github.repository}}/archive/${{github.ref_name}}.zip -O /tmp/${{github.ref_name}}.zip
           unzip /tmp/${{github.ref_name}}.zip -d /tmp/${{github.actor}}
-          echo -n ${{ matrix.example }}
       - name: Build PlatformIO examples
         run: pio ci --lib "." --lib="/tmp/${{github.repository}}-${{github.ref_name}}" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
-          #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much 
+          #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much
+      - name: Test
+        run: |
+          ls -al
+          pwd
+          cat firmware.hex
+
+
