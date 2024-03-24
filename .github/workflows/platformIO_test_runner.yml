@@ -45,8 +45,10 @@ jobs:
           #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much
       - name: Test
         run: |
-          ls -al
           pwd
-          cat firmware.hex
+          ls -al
+          ls -al ..
+          ls -al ../..
+
 
 
