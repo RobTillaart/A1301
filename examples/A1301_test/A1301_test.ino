@@ -3,7 +3,6 @@
 //  AUTHOR: Rob Tillaart
 // PURPOSE: demo A1301 A1302 magnetometer.
 
-BUG
 
 #include "Arduino.h"
 #include "A1301.h"
