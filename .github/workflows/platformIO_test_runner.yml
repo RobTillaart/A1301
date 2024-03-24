@@ -38,9 +38,8 @@ jobs:
         run: |
           wget https://github.com/${{github.repository}}/archive/${{github.ref_name}}.zip -O /tmp/${{github.ref_name}}.zip
           unzip /tmp/${{github.ref_name}}.zip -d /tmp
-          echo ${{github.base_ref}}
       - name: Build PlatformIO examples
-        run: pio ci --lib "." --lib="/tmp/A1301-${{github.ref_name}}" --board=uno
+        run: pio ci --lib "." --lib="/tmp/${{github.repository}}-${{github.ref_name}}" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much 
