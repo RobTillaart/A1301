@@ -51,7 +51,7 @@ jobs:
           unzip /tmp/${{github.ref_name}}.zip -d /tmp/${{github.actor}}
 
       - name: Build PlatformIO examples
-        run: pio ci --lib "." --lib="/tmp/${{github.repository}}-${{github.ref_name}}" --board=esp32
+        run: pio ci --lib "." --lib="/tmp/${{github.repository}}-${{github.ref_name}}" --board=esp32dev
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much
