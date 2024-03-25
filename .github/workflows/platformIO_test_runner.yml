@@ -44,6 +44,7 @@ jobs:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much
       - name: Test
+        #  /home/runner/work/A1301/A1301 => all examples are there...
         run: |
           pwd
           ls -al
