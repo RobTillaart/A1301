@@ -1,3 +1,10 @@
+#
+#  experimental
+#
+#  https://docs.github.com/en/actions/
+#  https://docs.github.com/en/actions/examples/using-concurrency-expressions-and-a-test-matrix
+#  https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+#
 
 name: PlatformIO CI
 
@@ -6,21 +13,22 @@ on: [push]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    #  added timeout
     timeout-minutes: 20
     strategy:
       matrix:
         os: [ubuntu-latest]
+        #  manual add examples.
+        #  cd examples; ls -R */*.ino; cd ..
         example: [
                    examples/A1301_autoMidPoint/A1301_autoMidPoint.ino,
                    examples/A1301_demo/A1301_demo.ino,
-                   examples/A1301_determineNoise/A1301_determineNoise.ino,
-                   examples/A1301_performance/A1301_performance.ino,
+                   # examples/A1301_determineNoise/A1301_determineNoise.ino,
+                   # examples/A1301_performance/A1301_performance.ino,
                    examples/A1301_plotter/A1301_plotter.ino,
                    examples/A1301_test/A1301_test.ino,
                    examples/A1301_test_saturation/A1301_test_saturation.ino
                   ]
- 
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -43,15 +51,8 @@ jobs:
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           #  PLATFORMIO_BUILD_FLAGS: -D -Wall  # too much
-      - name: Test
+      - name: additional tests (experimental)
         #  /home/runner/work/A1301/A1301 => all examples are there...
         run: |
           pwd
-          ls -al
-          ls -al ..
-          ls -al ../..
-          ls -al ../../_actions
-          ls -al ../../_temp
-
-
 
