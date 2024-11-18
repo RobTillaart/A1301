@@ -11,6 +11,7 @@
 
 [![Commits since latest](https://img.shields.io/github/commits-since/RobTillaart/A1301/latest)](https://github.com/RobTillaart/A1301/commits/master)
 
+[![Actions Status](https://github.com/arduino/arduino-cli-example/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)
 
 # A1301
 
