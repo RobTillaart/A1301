@@ -11,7 +11,6 @@
 
 [![Commits since latest](https://img.shields.io/github/commits-since/RobTillaart/A1301/latest)](https://github.com/RobTillaart/A1301/commits/master)
 
-[![Actions Status](https://github.com/arduino/arduino-cli-example/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)
 
 # A1301
 
@@ -67,7 +66,7 @@ Please open an issue on GitHub.
 ```
 
 
-#### Constructor
+### Constructor
 
 - **HALL(uint8_t pin)** base class constructor.
 pin is the analogPin to read from.
@@ -78,7 +77,7 @@ pin is the analogPin to read from.
 - **A1326(uint8_t pin)** constructor.
 
 
-#### Configuration
+### Configuration
 
 - **void begin(float voltage, uint16_t steps)**
 Sets the parameters voltage and number of steps of the internal ADC.
@@ -98,7 +97,7 @@ Use with care.
 - **float getSensitivity()** return the set / current sensitivity.
 
 
-#### Read
+### Read
 
 - **float raw(uint8_t times = 1)** raw analog measurement.
 - **float read(uint8_t times = 1)** raw measurement converted to Gauss.
@@ -111,7 +110,7 @@ Returns Gauss.
 Can also be used for testing, e.g. replay of a series of data.
 
 
-#### Analyse
+### Analyse
 
 - **bool isNull()** last read is zero.
 - **bool isNorth()** last read is above than zero.
@@ -132,7 +131,7 @@ Indicator of change.
 Returns angle in radians. For degrees multiply by 180/PI.
 
 
-#### Saturation.
+### Saturation.
 
 Experimental saturation level.
 
@@ -143,7 +142,7 @@ If maxGauss < 0 the absolute value is set.
 - **float saturationLevel()** returns value between 0..100%, or beyond!
 
 
-#### Tesla 
+### Tesla 
 
 - **float Tesla(float Gauss)** convenience convertor.
 - **float mTesla(float Gauss)** convenience convertor.

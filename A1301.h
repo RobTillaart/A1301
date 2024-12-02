@@ -20,12 +20,26 @@
 
 #define A1301_LIB_VERSION        (F("0.2.3"))
 
-
+/**
+*/
 class HALL
 {
 public:
+/**
+ * @brief Construct a new HALL::HALL object
+ * 
+ * @param uint8_t pin IO pin to communicate with the HALL sensor
+ */
   HALL(uint8_t pin);
 
+  /**
+   * @brief init PCF8574 instance
+   * 
+   * @param float voltage maximum voltage the ADC handles, e.g. 5.0 
+   * @param uint16_t steps number of steps the ADC uses between 0 and voltage, e.g. 1023
+   * @return true 
+   * @return false 
+   */
   //  ADC parameters
   void      begin(float voltage, uint16_t steps);
 
