@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
       - run: |
           ls -al
           pwd
           ls -al ..
           ls -al ../A1301
-      - uses: actions/checkout@v4
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
           working-directory: '..'
