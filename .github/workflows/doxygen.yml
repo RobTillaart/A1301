@@ -11,6 +11,6 @@ jobs:
           pwd
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
-          working-directory: '../'
+          working-directory: '..'
           doxyfile-path: 'doxyfile'
 
