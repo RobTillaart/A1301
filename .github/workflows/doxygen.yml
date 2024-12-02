@@ -1,5 +1,12 @@
 name: DOXYGEN
 
-uses: mattnotmitt/doxygen-action@v1.9.8
-with:
-    doxyfile-path: './doxyfile'
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: mattnotmitt/doxygen-action@v1.9.8
+        with:
+          doxyfile-path: './doxyfile'
+          
