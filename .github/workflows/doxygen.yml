@@ -6,8 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - run: |
+        ls -al
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
-    working-directory: './'
-    doxyfile-path: 'doxyfile'
+          working-directory: '.'
+          doxyfile-path: 'doxyfile'
+
 
