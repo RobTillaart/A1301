@@ -9,11 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           ls -al
-          pwd
-          ls -al ..
-          ls -al ../A1301
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
-          working-directory: '..'
+          working-directory: '.'
           doxyfile-path: 'doxyfile'
 
