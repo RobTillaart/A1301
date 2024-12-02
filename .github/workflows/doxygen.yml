@@ -2,11 +2,11 @@ name: DOXYGEN
 
 on: [push, pull_request]
 jobs:
-  lint:
+  doxygen:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
-          doxyfile-path: './doxyfile'
+          doxyfile-path: './'
           
