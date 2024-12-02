@@ -9,6 +9,8 @@ jobs:
       - run: |
           ls -al
           pwd
-
-
+      - uses: mattnotmitt/doxygen-action@v1.9.8
+        with:
+          working-directory: '../'
+          doxyfile-path: '../doxyfile'
 
