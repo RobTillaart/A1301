@@ -8,6 +8,7 @@ jobs:
     steps:
       - run: |
           ls -al
+          pwd
 
 
 
