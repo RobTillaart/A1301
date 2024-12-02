@@ -1,4 +1,5 @@
 name: DOXYGEN
 
 uses: mattnotmitt/doxygen-action@v1.9.8
-
+with:
+    doxyfile-path: './doxyfile'
