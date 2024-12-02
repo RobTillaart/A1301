@@ -7,7 +7,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - run: |
-        ls -al
+          ls -al
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
           working-directory: '.'
