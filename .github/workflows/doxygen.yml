@@ -8,5 +8,6 @@ jobs:
     steps:
       - uses: mattnotmitt/doxygen-action@v1.9.8
         with:
-          doxyfile-path: './'
-          
+    working-directory: './'
+    doxyfile-path: 'doxyfile'
+
