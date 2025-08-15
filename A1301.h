@@ -34,7 +34,7 @@ public:
   HALL(uint8_t pin);
 
   /**
-   * @brief init PCF8574 instance
+   * @brief init HALL instance
    * 
    * @param voltage maximum voltage the ADC handles, e.g. 5.0 
    * @param steps number of steps the ADC uses between 0 and voltage, e.g. 1023
@@ -45,7 +45,6 @@ public:
 
 
   //  midpoint depends on ADC.
-
   void      setMidPoint(float midPoint);
   float     autoMidPoint(uint8_t times = 100);
   float     getMidPoint();

@@ -14,7 +14,7 @@
 
 # A1301
 
-Arduino library for A1301 and A1302 magnetometer.
+Arduino library for the A1301, A1302 and compatible magnetometers.
 
 
 ## Description
