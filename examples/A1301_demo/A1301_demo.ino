@@ -21,7 +21,7 @@ void setup()
   Serial.print("A1301_LIB_VERSION: ");
   Serial.println(A1301_LIB_VERSION);
   Serial.println();
-  Serial.println(print64(12345));
+  Serial.println(print64(12345ULL));
   Serial.println();
 
   mm.begin(5000, 1023);
