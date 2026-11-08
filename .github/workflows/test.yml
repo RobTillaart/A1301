@@ -15,7 +15,7 @@ jobs:
          bin/arduino-cli core update-index > /dev/null
          echo "step 2"
          bin/arduino-cli core install arduino:avr
-         bin/arduino-cli compile ../examples/A1301_plotter
+         bin/arduino-cli compile examples/A1301_plotter/A1301_plotter.ino
          
          
 
