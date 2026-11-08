@@ -13,7 +13,7 @@ jobs:
       with:
         fqbn: "arduino:avr:uno"
         sketch-paths: |
-          - ./examples/A1301_demo
+          - ./examples/*
         libraries: |
           - name: A1301
         verbose: true
