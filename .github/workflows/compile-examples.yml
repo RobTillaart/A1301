@@ -1,8 +1,15 @@
+name: Compile Examples
 
+on: [push, pull_request]
 
-- uses: arduino/compile-sketches@v1
-  with:
-    fqbn: "arduino:avr:uno"
-    libraries: |
-      - name: A1301
+jobs:
+  runTest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+        steps:
+        - uses: arduino/compile-sketches@v1
+          with:
+            fqbn: "arduino:avr:uno"
+            libraries: |
+              - name: A1301
 
