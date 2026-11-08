@@ -7,11 +7,11 @@ jobs:
   runTest:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    verbose: true
     steps:
     - uses: arduino/compile-sketches@v1
       with:
         fqbn: "arduino:avr:uno"
         libraries: |
           - name: A1301
+        verbose: true
 
