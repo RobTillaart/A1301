@@ -70,7 +70,7 @@ jobs:
         fqbn: ${{ matrix.board.fqbn }}
         platforms: ${{ matrix.board.platforms }}
         libraries: |
-          - name: A1301
+          - source-path: [  ./ ~/Arduino/libraries ]
           - name: printHelpers
         sketch-paths: |
           - examples
