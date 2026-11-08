@@ -12,7 +12,7 @@ jobs:
          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
          ls -al bin
          bin/arduino-cli core install arduino:avr:uno
-         bin/arduino-cli compile --fqbn arduino:avr:uno ../examples/A1301_plotter
+         bin/arduino-cli compile ../examples/A1301_plotter
          
          
 
