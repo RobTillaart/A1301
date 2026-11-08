@@ -1,5 +1,7 @@
 name: Compile Examples
-# https://github.com/arduino/compile-sketches
+
+#  https://github.com/arduino/compile-sketches
+#  https://blog.arduino.cc/2021/04/09/test-your-arduino-projects-with-github-actions/
 
 on: [push, pull_request]
 
@@ -14,7 +16,5 @@ jobs:
         fqbn: "arduino:avr:uno"
         sketch-paths: |
           - ./examples
-        # libraries: |
-          # - name: A1301
         verbose: true
 
