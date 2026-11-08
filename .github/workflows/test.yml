@@ -11,7 +11,6 @@ jobs:
       - run: |
          pwd
          ls -al
-         brew update
-         brew install arduino-cli
+         curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
          
 
