@@ -4,7 +4,7 @@ name: Compile Examples
 on: [push, pull_request]
 
 jobs:
-  runTest:
+  run_test:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -14,7 +14,7 @@ jobs:
         fqbn: "arduino:avr:uno"
         sketch-paths: |
           - ./examples
-        libraries: |
-          - name: A1301
+        # libraries: |
+          # - name: A1301
         verbose: true
 
