@@ -73,5 +73,4 @@ jobs:
         sketch-paths: |
           - examples
         verbose: true
-        run: ls -al sketches*
 
