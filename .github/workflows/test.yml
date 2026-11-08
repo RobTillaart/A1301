@@ -11,4 +11,7 @@ jobs:
       - run: |
          pwd
          ls -al
+         brew update
+         brew install arduino-cli
+         
 
