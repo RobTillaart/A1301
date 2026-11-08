@@ -6,7 +6,6 @@
 
 
 #include "A1301.h"
-#include "printHelpers.h"
 
 A1301 mm(A0);
 
@@ -20,8 +19,6 @@ void setup()
   Serial.println(__FILE__);
   Serial.print("A1301_LIB_VERSION: ");
   Serial.println(A1301_LIB_VERSION);
-  Serial.println();
-  Serial.println(print64(12345ULL));
   Serial.println();
 
   mm.begin(5000, 1023);
