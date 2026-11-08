@@ -69,6 +69,8 @@ jobs:
       with:
         fqbn: ${{ matrix.board.fqbn }}
         platforms: ${{ matrix.board.platforms }}
+        libraries: |
+          - name: printHelpers
         sketch-paths: |
           - examples
         verbose: true
