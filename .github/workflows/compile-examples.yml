@@ -16,7 +16,7 @@ jobs:
         board:
           - fqbn: ATTinyCore:avr:attinyx5opti:LTO
             platforms: |
-              - name: ATTinyCore:avr
+              - name: ATTinyCore:tiny
               - source-url: https://drazzy.com/package_drazzy.com_index.json
             artifact-name-suffix: ATTinyCore-avr
           - fqbn: arduino:avr:nano
