@@ -14,9 +14,9 @@ jobs:
     strategy:
       matrix:
         board:
-          - fqbn: ATTinyCore:avr:attinyx5opti
+          - fqbn: ATTinyCore:avr:ATtiny85
             platforms: |
-              - name: ATTinyCore:attiny85opti
+              - name: attiny85
                 source-url: https://drazzy.com/package_drazzy.com_index.json
             artifact-name-suffix: ATTinyCore-avr
           - fqbn: arduino:avr:nano
