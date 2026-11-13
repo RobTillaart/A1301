@@ -17,7 +17,7 @@ jobs:
           - fqbn: ATTinyCore:avr:attinyx5opti
             platforms: |
               - name: ATTinyCore:tiny
-              - source-url: https://drazzy.com/package_drazzy.com_index.json
+                source-url: https://drazzy.com/package_drazzy.com_index.json
             artifact-name-suffix: ATTinyCore-avr
           - fqbn: arduino:avr:nano
             platforms: |
