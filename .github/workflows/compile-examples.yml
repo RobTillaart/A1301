@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         board:
-          - fqbn: ATTinyCore:avr:attinyx5opti
+          - fqbn: ATTinyCore:avr:attinyx5opti:LTO
             platforms: |
               - name: ATTinyCore:avr
               - source-url: https://drazzy.com/package_drazzy.com_index.json
